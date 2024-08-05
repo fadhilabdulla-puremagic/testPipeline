@@ -27,16 +27,10 @@ jobs:
         env:
           CI: false
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: releases/v4
-          folder: .
-          clean: false
-          single-commit: true
   deploy:
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
