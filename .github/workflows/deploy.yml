@@ -27,9 +27,10 @@ jobs:
         env:
           CI: false
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: build
-        env:
-          CI: false
+          branch: releases/v4
+          folder: .
+          clean: false
+          single-commit: true
