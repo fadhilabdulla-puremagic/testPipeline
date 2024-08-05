@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -31,7 +31,15 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: releases/v4
-          folder: build/
+          folder: .
           clean: false
           single-commit: true
-
+  deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
