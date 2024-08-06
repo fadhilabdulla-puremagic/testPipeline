@@ -91,3 +91,22 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  copy-file:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'build'
+        destination_repo: 'fadhilabdulla-puremagic/public'
+        destination_folder: 'uae'
+        user_email: 'devops@itspuremagic.me'
+        user_name: 'fadhilabdulla-puremagic'
+        commit_message: 'A custom message for the commit'
