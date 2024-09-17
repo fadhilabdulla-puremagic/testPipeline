@@ -23,16 +23,18 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: Deploy to Lightsail via SSH
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.LIGHTSAIL_IP }}
-          username: ubuntu
-          key: ${{ secrets.UG_LIGHTSAIL_AWS }}
-          script: |
-            # Navigate to the deployment directory
-            cd /var/www/html/actionTest
-            # Remove old files
-            sudo rm -rf *
-            # Copy new build files from GitHub Action to the server directory
-            sudo cp -r ~/build/* .
+      - name: List build directory
+        run: ls -la build
+
+      - name: Clear previous files on Lightsail
+        run: |
+          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_IP }} "sudo rm -rf /var/www/html/actionTest/*"
+
+      - name: Deploy to Lightsail
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.UG_LIGHTSAIL_AWS }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          scp -o StrictHostKeyChecking=no -r build/* ubuntu@${{ secrets.LIGHTSAIL_IP }}:/var/www/html/actionTest/
