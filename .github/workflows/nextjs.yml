@@ -22,7 +22,7 @@ jobs:
             # Clone the repository into the actionTest directory
             git clone https://github.com/fadhilabdulla-puremagic/testPipeline.git /var/www/html/actionTest
 
-            # Change to the actionTest directory
+            # Change to the actionTest directo
             cd /var/www/html/actionTest
 
             # Install dependencies
