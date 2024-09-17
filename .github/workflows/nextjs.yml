@@ -12,21 +12,27 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build React app
-        run: npm run build
-
-      - name: Deploy to Lightsail
-        # Use the 'appleboy/ssh-action' action for SSH deployment
-        uses: appleboy/ssh-action@master
+      - name: Deploy to Lightsail via SSH
+        uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.LIGHTSAIL_IP }} # Your server's IP address
+          host: ${{ secrets.LIGHTSAIL_IP }}
           username: ubuntu
-          key: ${{ secrets.UG_LIGHTSAIL_AWS }} # Your server's SSH private key
+          key: ${{ secrets.UG_LIGHTSAIL_AWS }}
           script: |
-            cd /var/www/html/actionTest/
-            git pull
+            # Clone the repository into the actionTest directory
+            git clone https://github.com/your_username/your_repository.git /var/www/html/actionTest
+
+            # Change to the actionTest directory
+            cd /var/www/html/actionTest
+
+            # Install dependencies
             npm install
+
+            # Build the React app
             npm run build
+
+            # Optionally, remove the previous build files if necessary
+            # sudo rm -rf /var/www/html/actionTest/*
+
+            # Copy the build files to the desired location if needed
+            # cp -r build/* /var/www/html/actionTest/
