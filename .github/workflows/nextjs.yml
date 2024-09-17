@@ -30,6 +30,9 @@ jobs:
           username: ubuntu
           key: ${{ secrets.UG_LIGHTSAIL_AWS }}
           script: |
+            # Navigate to the deployment directory
             cd /var/www/html/actionTest
+            # Remove old files
             sudo rm -rf *
-            scp -r build/* ubuntu@${{ secrets.LIGHTSAIL_IP }}:/var/www/html/actionTest
+            # Copy new build files from GitHub Action to the server directory
+            sudo cp -r ~/build/* .
