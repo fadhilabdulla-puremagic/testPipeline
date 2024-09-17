@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.UG_LIGHTSAIL_AWS }}
           script: |
             # Clone the repository into the actionTest directory
-            git clone https://github.com/your_username/your_repository.git /var/www/html/actionTest
+            git clone https://github.com/fadhilabdulla-puremagic/testPipeline.git /var/www/html/actionTest
 
             # Change to the actionTest directory
             cd /var/www/html/actionTest
