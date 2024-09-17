@@ -19,20 +19,14 @@ jobs:
           username: ubuntu
           key: ${{ secrets.UG_LIGHTSAIL_AWS }}
           script: |
-            # Clone the repository into the actionTest directory
-            git clone https://github.com/fadhilabdulla-puremagic/testPipeline.git /var/www/html/actionTest
-
             # Change to the actionTest directo
             cd /var/www/html/actionTest
+
+            # Clone the repository into the actionTest directory
+            git pull origin main
 
             # Install dependencies
             npm install
 
             # Build the React app
             npm run build
-
-            # Optionally, remove the previous build files if necessary
-            # sudo rm -rf /var/www/html/actionTest/*
-
-            # Copy the build files to the desired location if needed
-            # cp -r build/* /var/www/html/actionTest/
