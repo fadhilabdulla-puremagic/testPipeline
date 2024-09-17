@@ -12,26 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-
       - name: Install dependencies
         run: npm install
 
       - name: Build React app
         run: npm run build
 
-      - name: Clear previous files on Lightsail
-        run: |
-          ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_IP }} "sudo rm -rf /var/www/html/actionTest/*"
-
       - name: Deploy to Lightsail
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.UG_LIGHTSAIL_AWS }}
-        run: |
-          mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          scp -o StrictHostKeyChecking=no -r build/* ubuntu@${{ secrets.LIGHTSAIL_IP }}:/var/www/html/actionTest/
+        # Use the 'appleboy/ssh-action' action for SSH deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.LIGHTSAIL_IP }} # Your server's IP address
+          username: ubuntu
+          key: ${{ secrets.UG_LIGHTSAIL_AWS }} # Your server's SSH private key
+          script: |
+            cd /var/www/html/actionTest/
+            git pull
+            npm install
+            npm run build
