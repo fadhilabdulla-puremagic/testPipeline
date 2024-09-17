@@ -23,9 +23,6 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: List build directory
-        run: ls -la build
-
       - name: Clear previous files on Lightsail
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@${{ secrets.LIGHTSAIL_IP }} "sudo rm -rf /var/www/html/actionTest/*"
