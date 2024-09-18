@@ -1,0 +1,10 @@
+.error-display{
+    background-color: red;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.error-display p{
+    color: white;
+    font-size: 1rem;
+}

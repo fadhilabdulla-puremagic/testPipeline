@@ -1,0 +1,17 @@
+.spinner-container{
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.spinner-container img{
+    height: 5rem;
+}

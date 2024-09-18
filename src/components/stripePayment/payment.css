@@ -1,0 +1,40 @@
+.payment-button {
+  background-color: #6772e5;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  color: #fff;
+  font-family: "Helvetica Neue";
+  font-size: 16px;
+  border: none;
+  margin-top: 20px;
+  padding: 16px 70px;
+}
+
+.payment-button:hover {
+  background-color: #7795f8;
+}
+
+.payment-button:focus {
+  box-shadow: 0 4px 12px rgba(50,50,93,.11);
+}
+
+.payment-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.payment-button:active {
+  background-color: #6b7bb6;
+}
+
+.stripe-card-container {
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  padding: 16px;
+  background-color: #fff;
+}
+
+.stripe-card-container:focus-within {
+  border-color: #6772e5;
+  box-shadow: 0 0 0 2px rgba(102, 114, 229, 0.5);
+}

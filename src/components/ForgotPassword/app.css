@@ -1,0 +1,65 @@
+.main-container{
+    height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.forget-section form{
+    width: 40rem;
+    max-width: 40rem;
+}
+
+.form h2{
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #309255;
+    width: 100%;
+}
+
+
+.form input{
+    margin-left: -1px;
+}
+
+.form button{
+    width: 100%;
+}
+
+#login-link{
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+#login-link span{
+    border-bottom: 2px solid darkcyan;
+}
+
+
+#login-link span:hover{
+    color: rgb(10, 162, 162);
+}
+
+.fa-icon-check{
+    font-size: larger;
+    font-weight: bolder;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.email-sent{
+    /* width: 450px; */
+    max-width: 80vw;
+    /* height: 300px; */
+    background: #acd2cc;
+    display: flex;
+    padding: 1.6rem;
+    align-items: center;
+    font-size: larger;
+    font-weight: bold;
+    justify-content: space-around;
+}

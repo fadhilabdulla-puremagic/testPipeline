@@ -1,0 +1,58 @@
+.shape-1{
+    display: none;
+}
+
+.instructor-section{
+    display:'flex'; 
+    justify-content: center;
+    align-items: center;
+}
+
+.instructor-title + p{
+    text-align: center;
+    line-break: normal;
+   
+}
+
+.instructor-title{
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: -20px;
+}
+
+.section-teacher-join{
+    display: flex;
+    margin: 0px auto;
+    max-width: 986px;
+}
+
+.section-teacher-join-a{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.section-teacher-join-a h3{
+    color:  orange;
+    font-size: larger;
+    font-weight: bold;
+}
+
+
+.section-teacher-join-a h1{
+     font-size: 2rem;
+  
+}
+
+
+.section-teacher-join-b{
+    flex: 1;
+    
+}
+
+@media screen and (max-width:786px) {
+    .section-teacher-join{
+        flex-direction: column;
+    }          
+}

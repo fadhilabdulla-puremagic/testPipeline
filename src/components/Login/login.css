@@ -1,0 +1,32 @@
+.register-with-us{
+    text-align: center;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.register-with-us span{
+    color:rgb(52, 88, 90);
+    font-weight: bold;
+}
+
+
+.register-with-us span:hover{
+    color:rgb(106, 187, 190);
+    font-weight: bold;
+}
+
+.single-form{
+    width: 100%;
+}
+
+
+.forgot-password{
+    color: teal;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.forgot-password:hover{
+    color: rgb(7, 155, 155);
+   
+}

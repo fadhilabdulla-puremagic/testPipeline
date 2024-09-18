@@ -1,0 +1,101 @@
+.modal {
+  position: fixed;
+  display: block;
+  z-index: 2000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .5s;
+  max-width: 100%;
+  max-height: 100%;
+  border: none;
+  animation-name: content;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  margin-left: 0.rem;
+  margin-right: 0.5rem; 
+}
+
+.backdrop{
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.modal-content p {
+  font-weight: bold;
+  font-size: large;
+}
+
+.close-modal{
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 20px;
+  margin-top: 10px;
+  background: none;
+  border: none;
+} 
+
+@keyframes content {
+  0% {top: -70%}
+  100% {top: 70%;}
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.google-button,
+.facebook-button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  text-align: center;
+  cursor: pointer;
+  height: 3rem;
+}
+
+.google-button:hover {
+  background-color: #eee;
+}
+
+.facebook-button:hover{
+  background-color: #71a2e1;
+}
+
+.google-button {
+  color: #757575;
+}
+
+.facebook-button {
+  color: #fff;
+  background-color: #1877f2;
+  border-color: #1877f2;
+}
+
+.submit_btn{
+  background-color: #339458;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}

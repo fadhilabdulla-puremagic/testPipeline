@@ -1,0 +1,25 @@
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#fff; 
+    font-family: 'Arvo', serif;
+    height: 850px;
+    flex-direction: column;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.not-found img {
+    margin-top: 20px;
+    height: 400px;
+    margin-bottom: -80px;
+    /* background-position: center; */
+}
+
+.four_zero_four_bg img{
+    height: 100%;
+    width: 100%;
+}
+

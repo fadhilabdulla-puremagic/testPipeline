@@ -1,0 +1,215 @@
+@media only screen and (max-width: 787px) {
+    .instructor-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        /* height: 100%; */
+        z-index: 9999;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        overflow-y: scroll;
+        /* max-height: 35rem; */
+    }
+
+    .instructor-modal-close-modal {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: 20px;
+        margin-top: 10px;
+        border: none;
+        background-color: white;
+    }
+
+
+    .checkbox-policy-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .checkbox-policy-container input {
+
+        width: 1rem;
+    }
+
+
+    .checkbox-policy-container p {
+        margin-left: 0.5rem;
+        margin-top: 12px;
+        text-align: justify;
+        font-weight: 600;
+    }
+
+
+
+}
+
+.instructor-modal h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.02rem;
+    font-size: 1.5rem;
+    color: #309255;
+
+}
+
+.instructor-modal p {
+    /* color: black; */
+    font-size: medium;
+    line-height: 1.4;
+
+}
+
+
+@media only screen and (min-width:786px) {
+    .instructor-modal {
+        position: fixed;
+        display: block;
+        z-index: 2000;
+        top: 50%;
+        left: 50%;
+        right: 50%;
+        transform: translate(-50%, -60%);
+        max-width: 430px;
+        width: 430px;
+        /* height: 50rem; */
+        border: none;
+        animation-name: content;
+        animation-duration: .5s;
+        animation-fill-mode: forwards;
+        transition: all .5s;
+        overflow-y: scroll;
+        max-height: 43rem;
+        scrollbar-width: thin;
+
+    }
+
+
+
+    .checkbox-policy-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+    }
+
+    #send-instructor {
+        width: 100%;
+        margin-top: 10px;
+        background-color: #309255 !important;
+    }
+
+    /* 
+    .btn:hover{
+      background-color: #000 !important;
+      border: none;
+    } */
+
+    .checkbox-policy-container input {
+
+        width: 1rem;
+    }
+
+
+    .checkbox-policy-container p {
+        margin-left: 0.5rem;
+        margin-top: 12px;
+        width: 500px;
+
+    }
+
+    .instructor-modal-close-modal {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: 20px;
+        margin-top: 10px;
+        border: none;
+        background-color: white;
+    }
+
+    .instructor-modal-content {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 0.5rem;
+
+    }
+
+    @keyframes content {
+        0% {
+            top: -60%
+        }
+
+        100% {
+            top: 60%;
+        }
+    }
+}
+
+input {
+    margin: 6px;
+    padding: 1.5rem 0.5rem;
+}
+
+textarea {
+    margin: 6px;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+}
+
+input:focus {
+    border: 1px solid seagreen;
+}
+
+
+.error-display {
+    background-color: red;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.error-display p {
+    color: white;
+    font-size: 1rem;
+}
+
+.instructor-modal-overlay {
+    /* The Modal (background) */
+
+    position: fixed;
+    /* Stay in place */
+    z-index: 99;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+
+}

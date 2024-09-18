@@ -1,0 +1,18 @@
+.bestSellerTag{
+    bottom: 0;
+    height: 22px;
+    left: 0;
+    position: absolute;
+    width: auto;
+    z-index: 9;
+}
+.card-deals {
+    transition: transform 0.2s ease;
+    box-shadow: 0 4px 6px 0 rgba(22, 22, 26, 0.18);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 1.5em;
+  }
+  .card-deals:hover {
+    transform: scale(1.1);
+  }
